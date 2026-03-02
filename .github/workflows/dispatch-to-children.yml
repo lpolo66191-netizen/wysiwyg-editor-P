@@ -28,11 +28,11 @@ jobs:
 
 
 
-      - name: Dispatch to node child repo C6
+      - name: Dispatch to node child repo c6
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PAT }}
-          repository: lpolo66191-netizen/wysiwyg-editor-node-sdk-C6
+          repository: lpolo66191-netizen/wysiwyg-editor-node-sdk-c6
           event-type: version_update
           client-payload: |
             {
