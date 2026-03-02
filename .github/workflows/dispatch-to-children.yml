@@ -26,17 +26,6 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "Dispatching version $VERSION"
 
-      - name: Dispatch to Rails child repo
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.PAT }}
-          repository: froala/wysiwyg-rails
-          event-type: version_update
-          client-payload: |
-            {
-              "version": "${{ env.VERSION }}",
-              "release_notes": ${{ toJson(github.event.release.body) }}
-            }
 
 
       - name: Dispatch to node child repo C6
